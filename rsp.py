@@ -1,5 +1,13 @@
 import sys
 import random
+from enum import Enum
+
+class RSP(Enum):
+    ROCK = 1
+    PAPER = 2
+    SCISSORS = 3
+
+# print(RSP(2)) ## the way to access
 
 print("")
 print("Enter...\n1 for Rock,\n2 for Paper, or\n3 for Scissors.")
@@ -13,8 +21,8 @@ computerChoice = random.choice("123")
 computer = int(computerChoice)
 
 print("")
-print("You chose:", player)
-print("Python Chose:", computer)
+print("You chose:"+ str(RSP(player)) + ".")
+print("Python Chose:" + str(RSP(computer)) + ".")
 print("")
 
 if player == 1 and computer == 3:
